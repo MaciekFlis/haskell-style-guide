@@ -69,11 +69,19 @@ data HttpException
 Format records as follows:
 
 ```haskell
-data Person = Person
+data Person 
+    = Person
     { firstName :: !String  -- ^ First name
     , lastName  :: !String  -- ^ Last name
     , age       :: !Int     -- ^ Age
     } deriving (Eq, Show)
+```
+Format newtypes as follows, to line type constructor above data constructor: 
+
+```haskell
+newtype PredictedCost =
+        PredictedCost Int
+        deriving (Show, Eq, Ord)
 ```
 
 ### List Declarations
